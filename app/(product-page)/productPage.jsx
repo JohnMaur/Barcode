@@ -7,12 +7,12 @@ import icons from '../../constant/icons';
 import CustomButton from "../../components/CustomButton"
 
 const ProductPage = () => {
-  const { name, price, quantity, imgURL, barcode, button, userAccount } = useLocalSearchParams();
+  const { name, price, quantity, imgURL, barcode, button, userAccount, barcodeScanned } = useLocalSearchParams();
 
   return (
     <SafeAreaView className="h-full w-full bg-white">
       <View className="bg-white flex-row items-center py-4 shadow-xl border-b-[1px] border-gray-300">
-        <TouchableOpacity onPress={() => router.replace(button ? "user-home" : "admin_home")}>
+      <TouchableOpacity onPress={() => router.replace(barcodeScanned ? "user-barcode" : (button ? "user-home" : "admin-home"))}>
           <Image
             source={icons.backButton}
             className="w-7 h-7 ml-3"

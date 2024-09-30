@@ -12,11 +12,8 @@ import search from "../assets/icons/search.png"
 import backButton from "../assets/icons/back-button.png"
 import add from "../assets/icons/add.png"
 import camera from "../assets/icons/camera.png"
-<<<<<<< HEAD
 import barcodeScannerIcon from "../assets/icons/barcode-scan.png"
 import barcodeScannerIconBlack from '../assets/icons/barcode-scanner.png'
-=======
->>>>>>> 972a831115c9e64752ce2a5335daec1447f798f2
 
 export default {
   eye,
@@ -33,9 +30,6 @@ export default {
   backButton,
   add,
   camera,
-<<<<<<< HEAD
   barcodeScannerIcon,
   barcodeScannerIconBlack
-=======
->>>>>>> 972a831115c9e64752ce2a5335daec1447f798f2
 };

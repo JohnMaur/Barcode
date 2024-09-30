@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { Text, View, Image, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -9,16 +8,10 @@ import icons from "../../constant/icons";
 import ModalPopup from "../../components/ModalPopup";
 
 import { getAllProduct } from "../../lib/appwrite";
-=======
-import { useState, useEffect } from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
-import { BarCodeScanner } from 'expo-barcode-scanner';
->>>>>>> 972a831115c9e64752ce2a5335daec1447f798f2
 
 const AdminBarcode = () => {
   const [hasPermission, setHasPermission] = useState(null);
   const [scanned, setScanned] = useState(false);
-<<<<<<< HEAD
   const [dotCount, setDotCount] = useState(1);
   const [products, setProducts] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
@@ -65,21 +58,6 @@ const AdminBarcode = () => {
     } else {
       Alert.alert('Error', 'No product found for this barcode.');
     }
-=======
-
-  useEffect(() => {
-    const getBarCodeScannerPermissions = async () => {
-      const { status } = await BarCodeScanner.requestPermissionsAsync();
-      setHasPermission(status === 'granted');
-    };
-
-    getBarCodeScannerPermissions();
-  }, []);
-
-  const handleBarCodeScanned = ({ type, data }) => {
-    setScanned(true);
-    alert(`Bar code with type ${type} and data ${data} has been scanned!`);
->>>>>>> 972a831115c9e64752ce2a5335daec1447f798f2
   };
 
   if (hasPermission === null) {
@@ -90,7 +68,6 @@ const AdminBarcode = () => {
   }
 
   return (
-<<<<<<< HEAD
     <SafeAreaView className="w-full h-full">
       <View className="flex-1 justify-center items-center">
         {!scanned ? (
@@ -146,24 +123,3 @@ const AdminBarcode = () => {
 }
 
 export default AdminBarcode;
-=======
-    <View style={styles.container}>
-      <BarCodeScanner
-        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-        style={StyleSheet.absoluteFillObject}
-      />
-      {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-  },
-});
-
-export default AdminBarcode
->>>>>>> 972a831115c9e64752ce2a5335daec1447f798f2
